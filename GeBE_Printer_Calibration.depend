@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1680628782 source:c:\users\pc\documents\projektyc\gebe_printer_calibration\lib\serialib.cpp
+	"serialib.h"
+
+1680628782 c:\users\pc\documents\projektyc\gebe_printer_calibration\lib\serialib.h
+	<sys/time.h>
+	<sys/time.h>
+	<windows.h>
+	<stdlib.h>
+	<sys/types.h>
+	<sys/shm.h>
+	<termios.h>
+	<string.h>
+	<iostream>
+	<sys/time.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/ioctl.h>
+
+1688990688 source:c:\users\pc\documents\projektyc\gebe_printer_calibration\main.cpp
+	"lib/serialib.h"
+	<stdio.h>
+	<iostream>
+	<windows.h>
+	<conio.h>
+
