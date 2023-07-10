@@ -1,7 +1,5 @@
 #include "lib/serialib.h"
-#include <stdio.h>
 #include <iostream>
-#include <windows.h>
 #include <conio.h>
 
 using namespace std;
@@ -85,10 +83,10 @@ void CHECK_STATUS_AFTER_WRITE () {
 
 int main( /*int argc, char *argv[]*/) {
     //logo info
-    cout << "*****************************************************\n";
-    cout << "*** Kalibracja prezentera drukarki GEBE GPT-4673  ***\n";
-    cout << "*** by Michal Swidzinski for FREEMATIC Sp. z o.o. ***\n";
-    cout << "*****************************************************\n";
+    cout << "****************************************************\n";
+    cout << "*** Kalibracja prezentera drukarki GEBE GPT-4673 ***\n";
+    cout << "***   Michal Swidzinski - FREEMATIC Sp. z o.o.   ***\n";
+    cout << "****************************************************\n";
 
     cout << "Podaj port drukarki GeBE, COM: ";
     int a;
@@ -100,12 +98,19 @@ int main( /*int argc, char *argv[]*/) {
 
     //podlaczenie do portu szeregowego
     char errorOpening = serial.openDevice(gebePort, 115200);
+    //printf ("stat port: %d\n",errorOpening);
 
-    //przy bledzie polaczenia, wywala blad
-    if (errorOpening!=1) return errorOpening;
+    //przy bledzie polaczenia, wywala blad lub sukces polaczenia gdy port dostepny
+    if (errorOpening!=-1) {
         printf ("Polaczono z portem: %s\n",gebePort);
+    }
+    else {
+        printf ("Nie znaleziono portu: %s\n",gebePort);
+        EXIT_APP();
+    }
+    //return errorOpening;
 
-    // wykonywane void'y
+    //wykonywane void'y
     CHECK_STATUS ();
     CHECK_STATUS_AFTER_WRITE ();
 }

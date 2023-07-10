@@ -17,10 +17,8 @@
 	<unistd.h>
 	<sys/ioctl.h>
 
-1688990688 source:c:\users\pc\documents\projektyc\gebe_printer_calibration\main.cpp
+1689005963 source:c:\users\pc\documents\projektyc\gebe_printer_calibration\main.cpp
 	"lib/serialib.h"
-	<stdio.h>
 	<iostream>
-	<windows.h>
 	<conio.h>
 
